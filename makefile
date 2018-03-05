@@ -1,6 +1,5 @@
 run: main.py display.py draw.py matrix.py parser.py
-	python main.py
-
+	python parser.py
 clean:
 	rm *.pyc
 	rm *~

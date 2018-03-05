@@ -3,9 +3,9 @@ import math
 def make_translate( x, y, z ):
     trans = new_matrix()
     ident(trans)
-    trans[0][3]=x
-    trans[1][3]=y
-    trans[2][3]=z
+    trans[3][0]=x
+    trans[3][1]=y
+    trans[3][2]=z
     return trans
 
 def make_scale( x, y, z ):
@@ -18,32 +18,32 @@ def make_scale( x, y, z ):
     return trans
 
 def make_rotX( theta ):   
-    rad = math.radians(theta)
+    rad = theta * math.pi/180
     trans = new_matrix()
     ident(trans)
-    trans[1][0] = math.cos(rad)
-    trans[1][1] = -1 * math.sin(rad)
-    trans[2][0] = math.sin(rad)
-    trans[2][1] = math.cos(rad)
+    trans[1][1] = math.cos(rad)
+    trans[2][1] = -1 * math.sin(rad)
+    trans[1][2] = math.sin(rad)
+    trans[2][2] = math.cos(rad)
     return trans
 
 def make_rotY( theta ):
-    rad = math.radians(theta)
-    trans = new_matrix()
-    ident(trans)
-    trans[2][0] = math.cos(rad)
-    trans[2][1] = -1 * math.sin(rad)
-    trans[0][0] = math.sin(rad)
-    trans[0][1] = math.cos(rad)
-    return trans
-
-def make_rotZ( theta ):
-    rad = math.radians(theta)
+    rad = theta* math.pi/180
     trans = new_matrix()
     ident(trans)
     trans[0][0] = math.cos(rad)
-    trans[0][1] = -1 * math.sin(rad)
-    trans[1][0] = math.sin(rad)
+    trans[2][0] = -1 * math.sin(rad)
+    trans[0][2] = math.sin(rad)
+    trans[2][2] = math.cos(rad)
+    return trans
+
+def make_rotZ( theta ):
+    rad = theta*math.pi/180
+    trans = new_matrix()
+    ident(trans)
+    trans[0][0] = math.cos(rad)
+    trans[1][0] = -1 * math.sin(rad)
+    trans[0][1] = math.sin(rad)
     trans[1][1] = math.cos(rad)
     return trans
 

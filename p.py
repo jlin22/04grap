@@ -35,7 +35,7 @@ def parse_file( fname, points, transform, screen, color ):
 					matrix_mult(make_rotZ(int(script[index+2])), transform)
 					index+=3
 			elif script[index] == 'apply':
-				print_matrix(points)
+				#print_matrix(points)
 				matrix_mult(transform, points)
 				ftoi(points)
 				

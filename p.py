@@ -41,6 +41,7 @@ def parse_file( fname, points, transform, screen, color ):
 				
 				index+=1
 			elif script[index] == 'display':
+				clear_screen(screen)
 				draw_lines(points, screen, color)
 				display(screen)
 				index+=1

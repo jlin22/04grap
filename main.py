@@ -1,7 +1,7 @@
 from display import *
 from draw import *
 from matrix import *
-from parser import *
+from p import *
 
 screen = new_screen()
 color = [ 0, 255, 0 ]
